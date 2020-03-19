@@ -24,6 +24,7 @@ except:
 from gpt_2_simple.src import model, sample, encoder, memory_saving_gradients
 from gpt_2_simple.src.load_dataset import load_dataset, Sampler
 from gpt_2_simple.src.accumulate import AccumulatingOptimizer
+from tensor2tensor.utils.adafactor import AdafactorOptimizer
 
 assert tf.__version__ < '2.0.0', "gpt-2-simple currently does not support " \
     "TensorFlow 2.0. You'll need to use a virtualenv/cloud computer which " \
@@ -223,6 +224,8 @@ def finetune(sess,
         opt = tf.compat.v1.train.AdamOptimizer(learning_rate=learning_rate)
     elif optimizer == 'sgd':
         opt = tf.compat.v1.train.GradientDescentOptimizer(learning_rate=learning_rate)
+    elif optimizer == 'adafactor':
+        opt = opt = AdafactorOptimizer(learning_rate=learning_rate)
     
     if fp16:
         opt = tf.compat.v1.train.experimental.enable_mixed_precision_graph_rewrite(opt)
