@@ -12,7 +12,7 @@ Alternatively, you can run train.py after the data is prepared to perform the tr
 
 ## Results
 
-This is an example function created after running the 1.5 billion parameter model for 14k iterations. The input conditioning was "def join_text(text_list):":
+This is an example function created by the model after training the 1.5 billion parameter model for 14k iterations. The input conditioning was "def join_text(text_list):":
 
 ```python
 def join_text(text_list):
