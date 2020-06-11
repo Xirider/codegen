@@ -1,8 +1,8 @@
 # codegen
 
-Codegen allows you to easily finetune GPT-2 Large (1.5 billion parameter) on Code or other text. You can also then run inference on the model with just one command.
+Codegen allows you to easily finetune GPT-2 Large (1.5 billion parameter) on code or other text. You can also then run inference on the model with just one command.
 
-It supports gradient checkpointing and the AdaGrad Optimizer, which allows you to train GPT-2 Large on a single GPU with 16GB VRAM (like V100 or P100).
+It uses gradient checkpointing and the AdaFactor Optimizer by default, which allows you to train GPT-2 Large on a single GPU with 16GB VRAM (like V100 or P100) without running out of memory.
 
 ## Usage
 
